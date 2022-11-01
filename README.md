@@ -1,6 +1,6 @@
 # Welcome to Youtify! 
-> Outline a brief description of your project.
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+Youtify is a web app that puts your favorite YouTube and Spotify playlists in the same place, which breaks the need of switching back and forth between the apps when updating playlists. I am building this because I hate having to go between apps to create new playlists in Spotify that I have on YouTube. When the lists are in the same place you can easily replicate the playlist. One of the core features is functionality that adds a youtube playlist to your Spotify list. 
+<!-- >> Live demo [_here_](https://www.example.com).  If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -17,10 +17,10 @@
 
 
 ## General Information
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
+- Your music activity, all the time!
+- Youtify is for all music lovers!
+- I designed this project to automate the process of making Spotify playlists from YouTube playlists
+
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
 
@@ -34,11 +34,17 @@
 - Auth(0)
 
 
+## MVP
+
+- About the App 
+- List of personal playlists from API
+- User Login
+
 ## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+
+- Youtify News
+- Search Bar
+- Contact Form
 
 
 ## Screenshots
@@ -60,7 +66,7 @@ Provide various use cases and code examples here.
 
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+Project is: _in progress_ 
 
 
 ## Room for Improvement
@@ -83,7 +89,7 @@ Give credit here.
 
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by...
 
 
 <!-- Optional -->
