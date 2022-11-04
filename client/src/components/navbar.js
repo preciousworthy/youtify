@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
 const Navbar = () => {
-    const path = window.location.pathname
+    //const path = window.location.pathname
 
   return (
     <nav className='nav'>

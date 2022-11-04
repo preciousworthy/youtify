@@ -1,16 +1,28 @@
 import "./App.css";
-import Students from "./components/students";
+import { useAuth0 } from "@auth0/auth0-react";
+import Loading from "./components/loading";
 import { Route, Routes } from "react-router-dom";
+import NavBar from "./components/nav-bar-auth";
 import About from "./pages/about";
 import Header from "./components/header";
 import News from "./pages/news";
+import Students from "./components/students";
 
 function App() {
+
+
+  const { isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
-    <div className="App">
+    <div id="app" className="d-flex flex-column h-100">
+      <NavBar />
       <Header />
-      <div className="container">
+      <div className="container flex-grow-1">
         <Routes>
+          <Route path="/" element={<Students />} />
           <Route path="/about" element={<About />} />
           <Route path="/news" element={<News />} />
         </Routes>
