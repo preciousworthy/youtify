@@ -22,7 +22,7 @@ function App() {
       <Header />
       <div className="container flex-grow-1">
         <Routes>
-          <Route path="/" element={<Students />} />
+          
           <Route path="/about" element={<About />} />
           <Route path="/news" element={<News />} />
         </Routes>
