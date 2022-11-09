@@ -16,17 +16,17 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
-DROP DATABASE IF EXISTS techtonica1;
+DROP DATABASE IF EXISTS preshworthy;
 --
 -- Name: techtonica1; Type: DATABASE; Schema: -; Owner: postgres
 --
 
-CREATE DATABASE techtonica1 WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'C';
+CREATE DATABASE preshworthy WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'C';
 
 
-ALTER DATABASE techtonica1 OWNER TO postgres;
+ALTER DATABASE preshworthy OWNER TO postgres;
 
-\connect techtonica1
+\connect preshworthy
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -44,23 +44,26 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: students; Type: TABLE; Schema: public; Owner: postgres
+-- Name: news; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.students (
+CREATE TABLE public.news (
     id integer NOT NULL,
-    lastname character varying(255),
-    firstname character varying(255)
+    title character varying (255),
+    author character varying(255),
+    image_link text,
+    content text,
+    date_added date DEFAULT CURRENT_DATE NOT NULL
 );
 
 
-ALTER TABLE public.students OWNER TO postgres;
+ALTER TABLE public.news OWNER TO postgres;
 
 --
--- Name: students_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: news_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public.students_id_seq
+CREATE SEQUENCE public.news_id_seq
     AS integer
     START WITH 1
     INCREMENT BY 1
@@ -69,27 +72,57 @@ CREATE SEQUENCE public.students_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.students_id_seq OWNER TO postgres;
+ALTER TABLE public.news_id_seq OWNER TO postgres;
 
 --
--- Name: students_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: news_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
-ALTER SEQUENCE public.students_id_seq OWNED BY public.students.id;
-
+ALTER SEQUENCE public.news_id_seq OWNED BY public.news.id;
 
 --
--- Name: students id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: news id; Type: DEFAULT; Schema: public; Owner: postgres
 --
+
+--
+-- Name: messages; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.messages (
+    id integer NOT NULL,
+    subject_line character varying (255),
+    message text,
+    email character varying(255),
+    date_sent date DEFAULT CURRENT_DATE NOT NULL
+);
+
+
+ALTER TABLE public.messages OWNER TO postgres;
+
+--
+-- Name: news_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+
+CREATE SEQUENCE public.messages_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.news_id_seq OWNER TO postgres;
+
+
 
 ALTER TABLE ONLY public.students ALTER COLUMN id SET DEFAULT nextval('public.students_id_seq'::regclass);
 
 
 --
--- Data for Name: students; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: news; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.students (id, lastname, firstname) FROM stdin;
+COPY public.news (id, title, author, image_link) FROM stdin;
 1	Gomez	Andrea
 2	Lee	Becca
 3	Smith	Will
@@ -118,6 +151,24 @@ SELECT pg_catalog.setval('public.students_id_seq', 13, true);
 
 ALTER TABLE ONLY public.students
     ADD CONSTRAINT students_pkey PRIMARY KEY (id);
+
+
+CREATE TABLE users (
+    id integer NOT NULL,
+    username varchar,
+    YouTube_url text,
+    Spotify_url text
+);
+
+CREATE TABLE playlists (
+    id integer NOT NULL,
+    title varchar,
+    user text,
+    users_id integer
+);
+
+
+
 
 
 --
