@@ -111,31 +111,31 @@ CREATE SEQUENCE public.messages_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.news_id_seq OWNER TO postgres;
+ALTER TABLE public.messages_id_seq OWNER TO postgres;
 
 
 
-ALTER TABLE ONLY public.students ALTER COLUMN id SET DEFAULT nextval('public.students_id_seq'::regclass);
+ALTER TABLE ONLY public.news ALTER COLUMN id SET DEFAULT nextval('public.news_id_seq'::regclass);
 
 
 --
 -- Data for Name: news; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.news (id, title, author, image_link) FROM stdin;
-1	Gomez	Andrea
-2	Lee	Becca
-3	Smith	Will
-4	Pond	Kate
-5	Lasso	Jamie
-7	Rodriguez	Arepa
-8	Smith	Crush
-9	Fonca	Billy
-10	Gomez	Teresa
-11	Tres	Prueba
-12	Cuatro	Prueba 
-13	Cinco	Prueba
-\.
+-- COPY public.news (id, title, author, image_link) FROM stdin;
+-- 1	Gomez	Andrea  
+-- 2	Lee	Becca
+-- 3	Smith	Will
+-- 4	Pond	Kate
+-- 5	Lasso	Jamie
+-- 7	Rodriguez	Arepa
+-- 8	Smith	Crush
+-- 9	Fonca	Billy
+-- 10	Gomez	Teresa
+-- 11	Tres	Prueba
+-- 12	Cuatro	Prueba 
+-- 13	Cinco	Prueba
+-- \.
 
 
 --
@@ -149,8 +149,8 @@ SELECT pg_catalog.setval('public.students_id_seq', 13, true);
 -- Name: students students_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.students
-    ADD CONSTRAINT students_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.news
+    ADD CONSTRAINT news_pkey PRIMARY KEY (id);
 
 
 CREATE TABLE users (
