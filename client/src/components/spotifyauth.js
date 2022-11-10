@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
+
 export const SpotifyAuth = () => {
     const CLIENT_ID = 'aa432ce05d2646c296073c0eaac7686c';
     const REDIRECT_URI = 'http://localhost:3000';
