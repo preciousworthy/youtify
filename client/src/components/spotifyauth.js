@@ -64,6 +64,7 @@ export const SpotifyAuth = () => {
         <form onSubmit={getPlaylists}>
         {data?.items ? data.items.map((item) => <p>{item.name}</p>) : null}
         </form>
+        <button onClick={getPlaylists}>get</button>
     </div>
   )
 }
