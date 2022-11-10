@@ -7,6 +7,7 @@ import About from "./pages/about";
 import Header from "./components/header";
 import News from "./pages/news";
 import Students from "./components/students";
+import Profile from "./components/profile";
 
 function App() {
 
@@ -22,9 +23,10 @@ function App() {
       <Header />
       <div className="container flex-grow-1">
         <Routes>
-          
+          <Route path='/' element={<About/>} />
           <Route path="/about" element={<About />} />
           <Route path="/news" element={<News />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
       {/* <Students /> */}
