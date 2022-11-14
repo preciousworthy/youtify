@@ -76,9 +76,7 @@ export const ContactForm = (props) => {
                 value={message.message}
                 required />
             </div>
-            <button className='btn btn-danger' type='submit'>
-                
-            </button>
+            <button className='btn btn-danger' type='submit'>Submit</button>
         </fieldset>
         </form>
     </div>
