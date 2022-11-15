@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 });
 
 // create the get request
-app.get('/api/students', cors(), async (req, res) => {
+app.get('/api/news', cors(), async (req, res) => {
   // const STUDENTS = [
 
   //     { id: 1, firstName: 'Lisa', lastName: 'Lee' },
@@ -29,8 +29,8 @@ app.get('/api/students', cors(), async (req, res) => {
   // ];
   // res.json(STUDENTS);
   try {
-    const { rows: students } = await db.query('SELECT * FROM students');
-    res.send(students);
+    const { rows: news } = await db.query('SELECT * FROM public.news');
+    res.send(news);
   } catch (e) {
     return res.status(400).json({ e });
   }
