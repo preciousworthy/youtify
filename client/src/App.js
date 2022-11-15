@@ -24,9 +24,9 @@ function App() {
   return (
     <div id="app" className="d-flex flex-column h-100">
       <NavBar />
+      <div className="container flex-grow-1">
       {!user ? <span>Welcome, please log in!</span> : <span>Hello <Link to="/profile">{user.name}</Link></span> }
       <Header />
-      <div className="container flex-grow-1">
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/about" element={<About />} />
