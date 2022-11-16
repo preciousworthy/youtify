@@ -11,7 +11,7 @@ const News = () => {
           .then((response) => response.json())
           .then((news) => {
                 setNews(news);
-                console.log(news)
+                
               });
       }
       useEffect(() => {
@@ -20,7 +20,7 @@ const News = () => {
   return (
     <div>
         <h1>News</h1>
-        {loadNews()}
+        <p>{loadNews()}</p>
     </div>
   )
 }
