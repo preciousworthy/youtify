@@ -18,7 +18,7 @@ const News = () => {
         loadNews();
       }, []);
   return (
-    <div>
+    <div className='container'>
         <h1>News</h1>
         {loadNews()}
     </div>
