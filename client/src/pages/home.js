@@ -55,14 +55,17 @@ export const Home = () => {
 
         console.log(data)
 
+        useEffect(() => {
+          getPlaylists();
+        }, []);
+
 
   return (
     <div>
-        {/* {!token ?
+        {!token ?
         <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>
-        : <button onClick={logout}>Logout</button>} */}
+        : <button onClick={logout}>Logout</button>}
         {data?.items ? data.items.map((item) => <p>{item.name}</p>) : null}
-        <button onClick={getPlaylists}>get</button>
     </div>
   )
 }
