@@ -40,43 +40,43 @@ export const ContactForm = (props) => {
 
 
   return (
-    <div className='container mt-5'>
+    <div className='container mt-5 '>
         <h2 className='mb-3'>Keep In Touch</h2>
         <form onSubmit={handleSubmit}>
-        <fieldset>
+        <fieldset className='form-group'>
             <div className='mb-3'>
-                <label className='form-label'>Name</label>
-                <input className='form-control' 
+                <label className='form-label m-1'>Name</label>
+                <input className='form-control-sm' 
                 type="text" 
                 id="name" 
                 value={message.name}
                 required />
             </div>
             <div className='mb-3'>
-                <label className='form-label'>Email</label>
-                <input className='form-control' 
+                <label className='form-label m-1'>Email</label>
+                <input className='form-control-sm' 
                 type="text" 
                 id="email" 
                 value={message.email}
                 required />
             </div>
             <div className='mb-3'>
-                <label className='form-label'>Subject</label>
-                <input className='form-control' 
+                <label className='form-label m-1'>Subject</label>
+                <input className='form-control-sm' 
                 type="text" 
                 id="subject" 
                 value={message.subject}
                 required />
             </div>
             <div className='mb-3'>
-                <label className='form-label'>Message</label>
-                <textarea className='form-control' 
+                <label className='form-label m-1'>Message</label>
+                <textarea className='form-control-sm' 
                 type="text" 
                 id="message" 
                 value={message.message}
                 required />
             </div>
-            <button className='btn btn-danger' type='submit'>Submit</button>
+            <button className='btn btn-danger mb-3' type='submit'>Submit</button>
         </fieldset>
         </form>
     </div>

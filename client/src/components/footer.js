@@ -14,9 +14,11 @@ export const Footer = () => {
     
     
   return (
-    <div>
+    <footer className='container'>
+      <div className='fixed-bottom '>
         <ContactForm saveMessage={addMessage} />
-    </div>
+      </div>
+    </footer>
   )
   }
   export default Footer;
