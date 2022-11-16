@@ -12,6 +12,7 @@ app.use(express.json());
 // creates an endpoint for the route /api
 app.get('/', (req, res) => {
   res.json({ message: 'Hello from My template ExpressJS' });
+  console.log('is this here')
 });
 
 // create the get request
@@ -26,7 +27,7 @@ app.get('/api/news', cors(), async (req, res) => {
   // ];
   // res.json(STUDENTS);
   try {
-    const { rows: news } = await db.query('SELECT * FROM public.news');
+    const { rows: news } = await db.query('SELECT * FROM public.news;');
     res.send(news);
   } catch (e) {
     return res.status(400).json({ e });

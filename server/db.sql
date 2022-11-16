@@ -24,7 +24,7 @@ DROP DATABASE IF EXISTS preshworthy;
 CREATE DATABASE preshworthy WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'C';
 
 
-ALTER DATABASE preshworthy OWNER TO postgres;
+ALTER DATABASE preshworthy OWNER TO presh;
 
 \connect preshworthy
 
@@ -57,7 +57,7 @@ CREATE TABLE public.news (
 );
 
 
-ALTER TABLE public.news OWNER TO postgres;
+ALTER TABLE public.news OWNER TO presh;
 
 --
 -- Name: news_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -72,7 +72,7 @@ CREATE SEQUENCE public.news_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.news_id_seq OWNER TO postgres;
+ALTER TABLE public.news_id_seq OWNER TO presh;
 
 --
 -- Name: news_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -97,7 +97,7 @@ CREATE TABLE public.messages (
 );
 
 
-ALTER TABLE public.messages OWNER TO postgres;
+ALTER TABLE public.messages OWNER TO presh;
 
 --
 -- Name: news_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -111,7 +111,7 @@ CREATE SEQUENCE public.messages_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.messages_id_seq OWNER TO postgres;
+ALTER TABLE public.messages_id_seq OWNER TO presh;
 
 
 

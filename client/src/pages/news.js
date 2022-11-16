@@ -5,22 +5,29 @@ const News = () => {
 
     const [news, setNews] = useState([]);
 
-    const loadNews = () =>{
+    const loadNews = async () =>{
         // A function to fetch the list of students that will be load anytime that list change
-        fetch("http://localhost:8080/api/news")
-          .then((response) => response.json())
-          .then((news) => {
-                setNews(news);
+        const response = await fetch("http://localhost:8080/api/news");
+        const data = await response.json();
+        setNews(data);
                 
-              });
-      }
+              };
       useEffect(() => {
         loadNews();
       }, []);
   return (
     <div>
         <h1>News</h1>
-        <p>{loadNews()}</p>
+        {news.map((item, index) => {
+          return(
+          <><h2>{item.title}</h2>
+          <h4>{item.author}</h4>
+          <h5>{item.date_added}</h5>
+          <p>{item.content}</p>
+          </>
+
+        )
+        })}
     </div>
   )
 }
