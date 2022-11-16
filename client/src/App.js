@@ -15,8 +15,7 @@ function App() {
 
 
   const { isLoading } = useAuth0();
-  const { user } = useAuth0();
-  console.log(user)
+  
 
   if (isLoading) {
     return <Loading />;
@@ -24,8 +23,7 @@ function App() {
   return (
     <div id="app" className="d-flex flex-column h-100">
       <NavBar />
-      <div className="container flex-grow-1">
-      {!user ? <span>Welcome, please log in!</span> : <span>Hello <Link to="/profile">{user.name}</Link></span> }
+      
       <Header />
         <Routes>
           <Route path='/' element={<Home />} />
@@ -33,7 +31,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
-      </div>
+      
      <Footer />
     </div>
   );

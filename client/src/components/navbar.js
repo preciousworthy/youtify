@@ -5,7 +5,7 @@ const Navbar = () => {
     //const path = window.location.pathname
 
   return (
-    <nav className='navbar navbar-expand-lg navbar-light bg-light fixed-top'>
+    <nav className='navbar navbar-expand-lg navbar-light bg-light'>
     <div className='container-fluid'>
         <Link to='/' className='navbar-brand'>Youtify</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
