@@ -24,51 +24,57 @@ export const Home = () => {
         }
     
         setToken(token)
-    
+        getPlaylists(token)
     }, [])
     console.log("token ******" + token)
 
     const logout = () => {
         setToken("")
         window.localStorage.removeItem('token')
+        setData({})
     }
 
     //const [searchKey, setSearchKey] = useState("")
     const [data, setData] = useState({})
    
-    const getPlaylists = async () => {
+    const getPlaylists = async (token_param) => {
         await axios.get("https://api.spotify.com/v1/me/playlists", {
             params: {limit: 10, offset: 0}, 
             headers: {
                 Accept: 'application/json',
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${token_param}`,
                 
              },
             })
              .then((response) => {
                 setData(response.data);
+                console.log("hello *o***" + response.data.items)
+                console.log(response.data.items)
               })
               .catch((error) => {
                 console.log(error);
               })
-              console.log("hello *****" + data.items)
+              
             }
-
-        
-
-        useEffect(() => {
-          getPlaylists();
-        }, []);
+              
 
 
   return (
-    <div className='container'>
+    <div>
       {console.log("div"+data.items)}
         {!token ?
         <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>
         : <button className='btn' onClick={logout}>Logout</button>}
-        {data?.items ? data.items.map((item) => <p>{item.name}</p>) : null}
+        <div className='container'>
+          <div className='row'>
+            {data?.items ? data.items.map((item, index) => 
+            <div className='col-3'>
+              <img src={item.images[0].url} className='img-thumbnail' />
+              <p key={index}>{item.name}</p>
+            </div>) : null}
+          </div>
+        </div>
     </div>
-  )
-}
+
+)}
 export default Home;
