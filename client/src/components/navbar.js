@@ -13,7 +13,7 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ms-auto">
-                <CustomLink className='nav-item' to='/about'>About the App</CustomLink>
+                <CustomLink className='nav-item m-2' to='/about'>About the App</CustomLink>
                 <CustomLink className='nav-item' to='/news'> News</CustomLink>
             </ul>
         </div>
