@@ -29,7 +29,7 @@ app.get('/api/news', cors(), async (req, res) => {
   // ];
   // res.json(STUDENTS);
   try {
-    const { rows: news } = await db.query('SELECT * FROM public.news');
+    const { rows: news } = await db.query('SELECT * FROM public.news;');
     res.send(news);
   } catch (e) {
     return res.status(400).json({ e });
