@@ -40,7 +40,7 @@ export const ContactForm = (props) => {
 
 
   return (
-    <div className='container mt-5 '>
+    <div className=''>
         <h2 className='mb-3'>Keep In Touch</h2>
         <form onSubmit={handleSubmit}>
         <fieldset className='form-group'>

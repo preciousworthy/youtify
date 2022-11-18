@@ -14,11 +14,11 @@ export const Footer = () => {
     
     
   return (
-    <footer className='container'>
-      <div className='fixed-bottom '>
+    <div className='container'>
+      <footer className='row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top'>
         <ContactForm saveMessage={addMessage} />
-      </div>
-    </footer>
+      </footer>
+    </div>
   )
   }
   export default Footer;
