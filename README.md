@@ -1,5 +1,5 @@
 # Welcome to Youtify! 
-Youtify is a web app that puts your favorite YouTube and Spotify playlists in the same place, which breaks the need of switching back and forth between the apps when updating playlists. I am building this because I hate having to go between apps to create new playlists in Spotify that I have on YouTube. When the lists are in the same place you can easily replicate the playlist. One of the core features is functionality that adds a youtube playlist to your Spotify list. 
+Youtify is a web app that showcases a Spotify user's playlists and the songs in them. I made this app to learn how to use Spotify API within a full stack application.
 <!-- >> Live demo [_here_](https://www.example.com).  If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
@@ -19,7 +19,7 @@ Youtify is a web app that puts your favorite YouTube and Spotify playlists in th
 ## General Information
 - Your music activity, all the time!
 - Youtify is for all music lovers!
-- I designed this project to automate the process of making Spotify playlists from YouTube playlists
+- I orginally designed this project to automate the process of creating playlists in Spotify
 
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
@@ -31,7 +31,7 @@ Youtify is a web app that puts your favorite YouTube and Spotify playlists in th
 - Node.js
 - Bootstap
 - Spotify Web API
-- Auth(0)
+- oAuth
 
 
 ## MVP
@@ -48,21 +48,15 @@ Youtify is a web app that puts your favorite YouTube and Spotify playlists in th
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](./client/public/Screen%20Shot%202022-11-23%20at%202.00.46%20PM.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 
 ## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
+User must have a Spotify account to use the application. If user doesn't have an account here are the credentials to an example account:
 
-Proceed to describe how to install / setup one's local environment / get started with the project.
-
-
-## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
+username: 31glmt6phyq7matkdg35ymwfcy5y
+password: eXample01234
 
 
 ## Project Status
@@ -73,23 +67,15 @@ Project is: _in progress_
 Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
 Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
+- Add sorting functionality to songs to sort them according to mood
+- Add more data to database for news feature
 
 To do:
-- Feature to be added 1
-- Feature to be added 2
-
-
-## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
-
+- Complete contents of the footer
+- About the App
 
 ## Contact
-Created by...
+Created by Presh Worthy
 
 
 <!-- Optional -->
