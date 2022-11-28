@@ -20,7 +20,7 @@ const News = () => {
         <h1>News</h1>
         {news.map((item, index) => {
           return(
-          <><h2>{item.title}</h2>
+          <><h2 key={index}>{item.title}</h2>
           <h4>{item.author}</h4>
           <h5>{item.date_added}</h5>
           <p>{item.content}</p>

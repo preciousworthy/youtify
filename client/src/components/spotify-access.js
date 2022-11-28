@@ -1,4 +1,3 @@
-import React from 'react';
 import axios from 'axios';
 
 
@@ -130,3 +129,9 @@ export const accessToken = getAccessToken()
 
  //get's the current user's playlists
  export const getCurrentUsersPlaylists = () => axios.get('/me/playlists')
+ //get current user profile
+ export const getCurrentUsersProfile = () => axios.get('/me')
+ //get playlist tracks
+ export const getPlaylistById = playlist_id => {
+     return axios.get(`/playlists/${playlist_id}`);
+ }

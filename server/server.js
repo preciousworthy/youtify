@@ -8,8 +8,6 @@ require('url').URLSearchParams;
 const buffer = require('buffer');
 
 
-
-
 const app = express();
 const REACT_BUILD_DIR = path.join(__dirname, '..', 'client', 'build');
 app.use(express.static(REACT_BUILD_DIR));
@@ -84,7 +82,7 @@ app.get('/callback', (req, res) => {
         })
       
         //let's redirect back to client
-        res.redirect(`http://localhost:3000/?${queryParams}`)
+        res.redirect(`http://localhost:3000/home?${queryParams}`)
         
 
        
@@ -126,74 +124,40 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(REACT_BUILD_DIR, 'index.html'));
 });
 
-// create the get request
+// create the get request to news api
 app.get('/api/news', cors(), async (req, res) => {
-  // const STUDENTS = [
-
-  //     { id: 1, firstName: 'Lisa', lastName: 'Lee' },
-  //     { id: 2, firstName: 'Eileen', lastName: 'Long' },
-  //     { id: 3, firstName: 'Fariba', lastName: 'Dadko' },
-  //     { id: 4, firstName: 'Cristina', lastName: 'Rodriguez' },
-  //     { id: 5, firstName: 'Andrea', lastName: 'Trejo' },
-  // ];
-  // res.json(STUDENTS);
   try {
-    const { rows: news } = await db.query('SELECT * FROM public.news;');
+    const { rows: news } = await db.query('SELECT title, author, image_link, content FROM public.news;');
     res.send(news);
   } catch (e) {
     return res.status(400).json({ e });
   }
 });
 
-// create the POST request
+app.get('/api/messages', cors(), async (req, res) => {
+  try {
+    const { rows: messages } = await db.query('SELECT * FROM newmessages');
+    res.send(messages);
+  } catch (e) {
+    return res.status(400).json({ e });
+  }
+});
+// create the POST request to messages table in db
 app.post('/api/messages', cors(), async (req, res) => {
   const newMessage = {
-    name: req.body.firstname,
-    email: req.body.lastname,
+    name: req.body.name,
+    email: req.body.email,
     subject: req.body.subject,
     message: req.body.message
   };
   console.log([newMessage.name, newMessage.email, newMessage.subject, newMessage.message]);
   const result = await db.query(
-    'INSERT INTO messages(name, email, subject, message) VALUES($1, $2) RETURNING *',
-    [newUser.firstname, newUser.lastname],
+    'INSERT INTO newmessages(name, email, subject, message) VALUES($1, $2, $3, $4) RETURNING *',
+    [newMessage.name, newMessage.email, newMessage.subject, newMessage.message],
   );
   console.log(result.rows[0]);
   res.json(result.rows[0]);
 });
-
-//A put request - Update a student 
-app.put('/api/students/:studentId', cors(), async (req, res) =>{
-  console.log(req.params);
-  //This will be the id that I want to find in the DB - the student to be updated
-  const studentId = req.params.studentId
-  const updatedStudent = { id: req.body.id, firstname: req.body.firstname, lastname: req.body.lastname}
-  console.log("In the server from the url - the student id", studentId);
-  console.log("In the server, from the react - the student to be edited", updatedStudent);
-  // UPDATE students SET lastname = "something" WHERE id="16";
-  const query = `UPDATE students SET lastname=$1, firstname=$2 WHERE id=${studentId} RETURNING *`;
-  const values = [updatedStudent.lastname, updatedStudent.firstname];
-  try {
-    const updated = await db.query(query, values);
-    console.log(updated.rows[0]);
-    res.send(updated.rows[0]);
-
-  }catch(e){
-    console.log(e);
-    return res.status(400).json({e})
-  }
-})
-
-// delete request
-app.delete('/api/students/:studentId', cors(), async (req, res) =>{
-  const studentId = req.params.studentId;
-  //console.log("From the delete request-url", req.params);
-  await db.query('DELETE FROM students WHERE id=$1', [studentId]);
-  res.status(200).end();
-
-});
-
-
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
