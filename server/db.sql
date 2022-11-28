@@ -33,7 +33,11 @@ CREATE TABLE public.messages (
 );
 
 
-ALTER TABLE public.messages OWNER TO postgres;
+
+ALTER TABLE public.messages OWNER TO presh;
+
+ALTER DATABASE preshworthy OWNER TO presh;
+
 
 --
 -- Name: messages_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -64,7 +68,7 @@ CREATE TABLE public.news (
 );
 
 
-ALTER TABLE public.news OWNER TO postgres;
+ALTER TABLE public.news OWNER TO presh;
 
 --
 -- Name: news_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -79,7 +83,7 @@ CREATE SEQUENCE public.news_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.news_id_seq OWNER TO postgres;
+ALTER TABLE public.news_id_seq OWNER TO presh;
 
 --
 -- Name: news_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -95,9 +99,14 @@ ALTER SEQUENCE public.news_id_seq OWNED BY public.news.id;
 ALTER TABLE ONLY public.news ALTER COLUMN id SET DEFAULT nextval('public.news_id_seq'::regclass);
 
 
+
 --
 -- Data for Name: messages; Type: TABLE DATA; Schema: public; Owner: postgres
 --
+
+
+
+ALTER TABLE public.messages_id_seq OWNER TO presh;
 
 
 
