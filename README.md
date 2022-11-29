@@ -1,5 +1,7 @@
 # Welcome to Youtify! 
 Youtify is a web app that showcases a Spotify user's playlists and the songs in them. I made this app to learn how to use Spotify API within a full stack application.
+
+(https://)
 <!-- >> Live demo [_here_](https://www.example.com).  If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
@@ -8,7 +10,6 @@ Youtify is a web app that showcases a Spotify user's playlists and the songs in 
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
-* [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
@@ -64,7 +65,6 @@ Project is: _in progress_
 
 
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
 Room for improvement:
 - Add sorting functionality to songs to sort them according to mood
